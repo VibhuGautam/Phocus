@@ -15,7 +15,7 @@ const Posts = ({ setCurrentId }) => {
            <Grid className = {classes.container} container alignItems = "strecth" spacing = {3}>
                {
                    posts.map((post) => (
-                       <Grid key = {post._id} item xs = {12} sm = {6}>
+                       <Grid key = {post._id} item xs = {12} sm = {6} md = {6}>
                            <Post post = {post} setCurrentId = {setCurrentId} />
                        </Grid>
                    ))
@@ -25,4 +25,4 @@ const Posts = ({ setCurrentId }) => {
     )
 }
 
-export default Posts 
+export default Posts;
