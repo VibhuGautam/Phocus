@@ -12,11 +12,11 @@ const postSchema = mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: new Date(),
+        default: Date.now,
     },
 });
 
 
-var PostMessage = mongoose.model('PostMessage' , postSchema);
+var PostMessage = mongoose.model("PostMessage" , postSchema);
 
 export default PostMessage;
