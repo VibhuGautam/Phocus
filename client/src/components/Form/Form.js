@@ -1,8 +1,9 @@
 import React , {useState , useEffect } from 'react'
 import { TextField, Button , Typography , Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
-import { useDispatch } from  'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from  'react-redux';
+
+
 import useStyles from './styles';
 import { createPost , updatePost } from '../../actions/posts';
 
@@ -19,19 +20,18 @@ const Form = ({ currentId , setCurrentId }) => {
     
     useEffect(() => {
         if(post)
-            setPostData(post);
-        
+            setPostData(post);        
     }, [post]);
 
     const clear = () => {
-        setCurrentId(null);
+        setCurrentId(0);
         setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if(currentId){
+        if(currentId !== 0){
             dispatch(updatePost(currentId , postData));
         }
         else{
@@ -58,4 +58,4 @@ const Form = ({ currentId , setCurrentId }) => {
     )
 } 
 
-export default Form
+export default Form;
