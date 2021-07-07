@@ -8,7 +8,7 @@ import useStyles from './styles';
 import Input from './Input';
 import Icon from './icon';
 import { signin , signup } from '../../actions/auth';
-
+import { AUTH } from '../../constants/actionType';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
