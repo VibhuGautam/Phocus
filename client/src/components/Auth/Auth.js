@@ -61,7 +61,7 @@ const Auth = () => {
         }
     };
     
-      const googleError = () => alert('Google Sign In was unsuccessful. Try Again Later');
+      const googleError = () => console.log('Google Sign In was unsuccessful. Try Again Later');
         
     return (
         <Container component = "main" maxWidth = "xs">
