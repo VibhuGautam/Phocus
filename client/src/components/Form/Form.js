@@ -20,15 +20,17 @@ const Form = ({ currentId , setCurrentId }) => {
     const user = JSON.parse(localStorage.getItem('profile'));
     const history = useHistory();
 
-    useEffect(() => {
-        if(post)
-            setPostData(post);        
-    }, [post]);
-
     const clear = () => {
         setCurrentId(0);
         setPostData({ title: '', message: '', tags: '', selectedFile: '' });
     };
+    
+    useEffect(() => {
+        if (!post?.title) 
+            clear();
+        if(post)
+            setPostData(post);        
+    }, [post]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
