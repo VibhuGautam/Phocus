@@ -1,5 +1,4 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionType'
-
+import { START_LOADING, END_LOADING, FETCH_ALL, FETCH_POST, FETCH_BY_SEARCH, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
 export const getPosts = () => async (dispatch) => {
@@ -10,7 +9,7 @@ export const getPosts = () => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
-};
+}; 
 
 export const getPostsBySearch = (searchQuery) => async (dispatch) => {
   try {
