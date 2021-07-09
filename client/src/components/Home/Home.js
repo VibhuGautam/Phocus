@@ -46,8 +46,8 @@ const Home = () => {
       };
     
       const handleAddChip = (tag) => setTags([...tags, tag]);
-    
-      const handleDeleteChip = (tagToDelete) => setTags(tags.filter((tag) => tag !== tagToDelete));
+
+      const handleDeleteChip = (chipToDelete) => setTags(tags.filter((tag) => tag !== chipToDelete));
 
     return (
         <Grow in>
@@ -57,7 +57,7 @@ const Home = () => {
                         <Posts setCurrentId = {setCurrentId}/>
                     </Grid>
                     <Grid item xs = {12} sm = {6} md = {3}>
-                        <AppBar className = {classes.AppBarSearch} position = "static" color = "inherit">
+                        <AppBar className = {classes.appBarSearch} position = "static" color = "inherit">
                             <TextField 
                             name = "search" 
                             variant="outlined"
@@ -70,8 +70,8 @@ const Home = () => {
                             <ChipInput 
                                 style={{ margin: '10px 0' }}
                                 value={tags}
-                                onAdd={handleAddChip}
-                                onDelete={handleDeleteChip}
+                                onAdd={(chip) => handleAddChip(chip)}
+                                onDelete={(chip) => handleDeleteChip(chip)}
                                 label="Search Tags"
                                 variant="outlined"
                             />
