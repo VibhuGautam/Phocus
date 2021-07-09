@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import  { Typography  , TextField , Button } from '@material-ui/core';
+import  { Typography  , TextField , Button } from '@material-ui/core/';
 import { useDispatch } from 'react-redux';
 
 import { commentPost } from '../../actions/posts';
@@ -16,8 +16,8 @@ const CommentSection = ({ post }) => {
   const handleComment = async () => {
     const newComments = await dispatch(commentPost(`${user?.result?.name}: ${comment}`, post._id));
     
-    setComments(newComments);
     setComment('');
+    setComments(newComments);    
     
     commentsRef.current.scrollIntoView({ behavior: 'smooth' }); 
   };
