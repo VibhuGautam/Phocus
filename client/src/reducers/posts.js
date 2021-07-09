@@ -1,10 +1,10 @@
-import { FETCH_ALL, FETCH_BY_SEARCH, FETCH_POST, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
+import { START_LOADING , END_LOADING ,  FETCH_ALL, FETCH_BY_SEARCH, FETCH_POST, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionType';
 
 export default (state = { isLoading: true, posts: [] }, action) => {
   switch (action.type) {
-    case 'START_LOADING':
+    case START_LOADING:
       return { ...state, isLoading: true };
-    case 'END_LOADING':
+    case END_LOADING:
       return { ...state, isLoading: false };
     case FETCH_ALL:
       return {
