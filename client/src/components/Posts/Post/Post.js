@@ -1,43 +1,39 @@
 import React, { useState } from 'react';
-import { Card, CardActions, CardContent, CardMedia, Button, Typography , ButtonBase  } from '@material-ui/core/';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core/';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
-import moment from 'moment';
 import { useDispatch } from 'react-redux';
+import moment from 'moment';
 import { useHistory } from 'react-router-dom';
 
 import { likePost, deletePost } from '../../../actions/posts';
 import useStyles from './styles';
 
 const Post = ({ post, setCurrentId }) => {
-  const dispatch = useDispatch();
-  const classes = useStyles();
-  const history = useHistory();
-  const [ likes , setLikes ] = useState(post?.likes); 
   const user = JSON.parse(localStorage.getItem('profile'));
-  
-  const userID = user?.result.googleid || user?.result?._id;
+  const [likes, setLikes] = useState(post?.likes);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const classes = useStyles();
 
-  const hasLikedPost = likes.find((like) => like === userID);
-
+  const userId = user?.result.googleId || user?.result?._id;
+  const hasLikedPost = likes.find((like) => like === userId);
 
   const handleLike = async () => {
     dispatch(likePost(post._id));
 
-    if(hasLikedPost){
-      setLikes(post.likes.filter((id) => id  !== userID));
-    }else{
-      setLikes([...post.likes , userID]);
+    if (hasLikedPost) {
+      setLikes(likes.filter((id) => id !== userId));
+    } else {
+      setLikes([...likes, userId]);
     }
-  }
-
-  
+  };
 
   const Likes = () => {
     if (likes.length > 0) {
-      return likes.find((like) => like === userID)
+      return likes.find((like) => like === userId)
         ? (
           <><ThumbUpAltIcon fontSize="small" />&nbsp;{likes.length > 2 ? `You and ${likes.length - 1} others` : `${likes.length} like${likes.length > 1 ? 's' : ''}` }</>
         ) : (
