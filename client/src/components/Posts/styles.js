@@ -43,6 +43,10 @@ export default makeStyles((theme) => ({
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
   },
+  nopost:{
+    fontSize: '5rem', 
+       
+  },
   [theme.breakpoints.down('sm')]: {
     appBar: {
       padding: '10px 20px',
@@ -61,9 +65,12 @@ export default makeStyles((theme) => ({
       justifyContent: 'flex-end',
       width: '160px',
     },
+    nopost:{
+      fontSize: '2rem',
+    }
   },
-
   actionDiv: {
     textAlign: 'center',
   },
+  
 }));
