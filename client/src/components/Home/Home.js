@@ -3,7 +3,7 @@ import { Container, Grow, Grid, AppBar, TextField, Button, Paper } from '@materi
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
-
+import SearchIcon from "@material-ui/icons/Search";
 import { getPostsBySearch } from '../../actions/posts';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
@@ -63,7 +63,7 @@ const Home = () => {
                 label="Search Tags"
                 variant="outlined"
               />
-              <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
+              <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary" startIcon = {<SearchIcon />}>Search</Button>
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             {(!searchQuery && !tags.length) && (
