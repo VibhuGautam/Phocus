@@ -9,6 +9,7 @@ export const signin = (formData, router) => async (dispatch) => {
 
     router.push('/');
   } catch (error) {
+    window.alert("Wrong Password");
     console.log(error);
   }
 };
@@ -21,6 +22,7 @@ export const signup = (formData, router) => async (dispatch) => {
 
     router.push('/');
   } catch (error) {
+    window.alert("Wrong Password, Please Enter it correctly");
     console.log(error);
   }
-};
+}; 
