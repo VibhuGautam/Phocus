@@ -5,7 +5,7 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "nodemon index.js"
+        "start": "node index.js"
     },
     "keywords": [],
     "author": "Vibhu  Gautam",
@@ -19,5 +19,8 @@
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.13.0",
         "nodemon": "^2.0.9"
+    },
+    "engines": {
+        "node": "v14.17.1"
     }
 }
