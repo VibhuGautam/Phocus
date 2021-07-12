@@ -44,8 +44,7 @@ export default makeStyles((theme) => ({
     backgroundColor: deepPurple[500],
   },
   nopost:{
-    fontSize: '5rem', 
-       
+    height: '500px',    
   },
   [theme.breakpoints.down('sm')]: {
     appBar: {
@@ -65,8 +64,8 @@ export default makeStyles((theme) => ({
       justifyContent: 'flex-end',
       width: '160px',
     },
-    nopost:{
-      fontSize: '2rem',
+    nopost: {
+      height: '250px',
     }
   },
   actionDiv: {

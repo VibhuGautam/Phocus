@@ -1,10 +1,10 @@
 import React from 'react';
-import { Grid, CircularProgress } from '@material-ui/core';
+import { Grid, CircularProgress, Paper } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 
 import Post from './Post/Post';
 import useStyles from './styles';
-
+import errorimg from '../../images/error.png';
 
 const Posts = ({ setCurrentId }) => {
     const { posts , isLoading } = useSelector((state) => state.posts); 
@@ -12,7 +12,9 @@ const Posts = ({ setCurrentId }) => {
 
     if( !posts.length && !isLoading)
         return (
-          <div className = {classes.nopost}>No Post</div>
+          <div >
+            <img className = {classes.nopost} src = {errorimg} />
+          </div>
         );
 
   
