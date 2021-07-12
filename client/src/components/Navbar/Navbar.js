@@ -19,7 +19,7 @@ const Navbar = () => {
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
 
-    history.push('/auth');
+    history.push('/posts');
 
     setUser(null);
   };
@@ -39,8 +39,8 @@ const Navbar = () => {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>
-        <img component={Link} to="/" src={phocusText} alt="icon" height="45px" />
-        <img className={classes.image} src={phocusLogo} alt="icon" height="40px" />
+        <img src={phocusText} alt="icon" height="45px" />
+        <img className={classes.image} src={phocusLogo} alt="icon" height="60px" />
       </Link>
       <Toolbar className={classes.toolbar}>
         {user?.result ? (
@@ -50,7 +50,7 @@ const Navbar = () => {
             <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
           </div>
         ) : (
-          <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+          <Button component = {Link} to = "/auth" variant="contained" color="primary">Sign In</Button>
         )}
       </Toolbar>
     </AppBar>
