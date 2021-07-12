@@ -9,7 +9,7 @@ export const signin = (formData, router) => async (dispatch) => {
 
     router.push('/');
   } catch (error) {
-    window.alert("Wrong Password");
+    window.alert("Wrong Id or Password");
     console.log(error);
   }
 };
