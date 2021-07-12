@@ -8,7 +8,7 @@ export const getPost = (id) => async (dispatch) => {
     const { data } = await api.fetchPost(id);
 
     dispatch({ type: FETCH_POST, payload: { post: data } });
-    
+  
   } catch (error) {
     console.log(error);
   }
@@ -99,7 +99,7 @@ export const commentPost = (value, id) => async (dispatch) => {
 
 export const deletePost = (id) => async (dispatch) => {
   try {
-    await api.deletePost(id);
+    await await api.deletePost(id);
 
     dispatch({ type: DELETE, payload: id });
   } catch (error) {
