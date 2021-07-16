@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,KACE,2DAAgD,CAChD,qBAAsB,CACtB,2BACA,CAEA,EACE,wCACF","file":"main.1984f222.chunk.css","sourcesContent":["body {\n  background-image: url(\"./images/background.jpg\");\n  background-size: cover;\n  background-attachment: fixed;\n  }\n  \n  * {\n    font-family: 'Heebo', sans-serif !important;\n  }"]}
